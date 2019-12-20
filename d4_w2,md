@@ -1,0 +1,25 @@
+how extract classes work a step by step guide
+
+
+step 1 - *Determine what to extract*
+          find logical units of data which are
+          grouped together or operations which are
+          performed on a subset of data
+step 2 - *Create a New Class*
+          extract operations and establish a link
+          from the old to new class. This link might be
+          bidirectional
+step 3 - *Rename the Old Class*
+          if the name of the old class is not fitting anymore
+          consider renaming it.
+step 4 - *Review each class*
+          mainly for the interfaces and links, the goal
+          should be minimally coupled classes; see if you can replace
+          bidirectional with unidirectional.
+step 5 - *Value vs Reference*
+          Decide whether you would like to expose the new object as a
+          value object (immutable), or a Reference object (may be modified)
+
+
+
+Step 1: Determine what to extract
