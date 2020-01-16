@@ -75,11 +75,11 @@ def String.value_of obj
 end
 
 
-#Class variables
+###Class variables
 class Person
-  # @@count is a class variable shared by Person and every subclass.
-  # When you instantiate a Person or any kind of Person, such as a Worker,
-  # the count increases.
+  *@@count is a class variable shared by Person and every subclass.
+   When you instantiate a Person or any kind of Person, such as a Worker,
+   the count increases.*
   @@count = 0
 
   def initialize
@@ -95,6 +95,9 @@ class Person
 end
 
 class Worker < Person
+  *@count is a CLASS INSTANCE VARIABLE exclusive to Worker.
+   Only when you instantiate a Worker, the count increases.*
+  @count = 0
 end
 
 8.times { Person.new }
@@ -102,6 +105,8 @@ end
 
 p Person.count # => 12
 p Worker.count # => 12
+
+
 
 *undefined*
 kind_of? and is_a? are synonymous.
