@@ -137,3 +137,26 @@ PostgreSQL ERROR: INSERT has more target columns than expressions, when it doesn
 i had done this - ('a, b') instead of ('a', 'b') /
 
 triple read your syntax test and code - alot of errors are typos.
+
+
+javascript 
+
+Greeting.prototype.hello = function(person) {
+  return 'Hello, ' + person + '!';
+}
+VM1320:1 Uncaught ReferenceError: Greeting is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1320:1
+function Greeting() {
+}
+undefined
+Greeting.prototype.hello = function(person) {
+  return 'Hello, ' + person + '!';
+}
+ƒ (person) {
+  return 'Hello, ' + person + '!';
+}
+var greeting = new Greeting(); 
+undefined
+greeting.hello('Jake');
+"Hello, Jake!"
