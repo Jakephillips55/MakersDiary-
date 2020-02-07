@@ -36,6 +36,11 @@ person.greeting # => "Hello Dennis"
 
 
 *Class tricks*
+
+DIFF between class and modules 
+
+https://stackoverflow.com/questions/151505/difference-between-a-class-and-a-module
+
 #class << self
 
 a = 'foo'
@@ -75,11 +80,11 @@ def String.value_of obj
 end
 
 
-#Class variables
+###Class variables
 class Person
-  # @@count is a class variable shared by Person and every subclass.
-  # When you instantiate a Person or any kind of Person, such as a Worker,
-  # the count increases.
+  *@@count is a class variable shared by Person and every subclass.
+   When you instantiate a Person or any kind of Person, such as a Worker,
+   the count increases.*
   @@count = 0
 
   def initialize
@@ -95,6 +100,9 @@ class Person
 end
 
 class Worker < Person
+  *@count is a CLASS INSTANCE VARIABLE exclusive to Worker.
+   Only when you instantiate a Worker, the count increases.*
+  @count = 0
 end
 
 8.times { Person.new }
@@ -102,6 +110,8 @@ end
 
 p Person.count # => 12
 p Worker.count # => 12
+
+
 
 *undefined*
 kind_of? and is_a? are synonymous.
@@ -142,3 +152,26 @@ PostgreSQL ERROR: INSERT has more target columns than expressions, when it doesn
 i had done this - ('a, b') instead of ('a', 'b') /
 
 triple read your syntax test and code - alot of errors are typos.
+
+
+javascript 
+
+Greeting.prototype.hello = function(person) {
+  return 'Hello, ' + person + '!';
+}
+VM1320:1 Uncaught ReferenceError: Greeting is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1320:1
+function Greeting() {
+}
+undefined
+Greeting.prototype.hello = function(person) {
+  return 'Hello, ' + person + '!';
+}
+ƒ (person) {
+  return 'Hello, ' + person + '!';
+}
+var greeting = new Greeting(); 
+undefined
+greeting.hello('Jake');
+"Hello, Jake!"
