@@ -119,6 +119,21 @@ UPDATE - PATCH /restaurants/123
 DELETE - DELETE /restaurants/123
 CRUD
 
+---------------
+In a one-to-many relationship, each row in the related to table can be related to many rows in the relating table. This allows frequently used information to be saved only once in a table and referenced many times in all other tables. In a one-to-many relationship between Table A and Table B, each row in Table A is linked to 0, 1 or many rows in Table B. The number of rows in Table A is almost always less than the number of rows in Table B.
+so
+id - name            content id - content  -------- id
+1 - bob                       2 - builders          1
+2 - tom                       4 - jerry             1
+3 - placeholder name          3 - placeholder idea  3
+4 - brave                     1 - heart             4
+
+each name above is linked to an id that id is referenced in the next table - so bob has id 1, 1 is referenced by builders and jerry. bob is multilinked to builders and jerry
+whereas the other names only have one link                 
+
+---------------
+---------------
+
 *ERRORS*
 #big cool ERRORS and whats maybe causing them
 
